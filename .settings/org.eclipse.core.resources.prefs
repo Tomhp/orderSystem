@@ -1,0 +1,16 @@
+eclipse.preferences.version=1
+encoding//src/main/java/com/ordersystem/index/IndexController.java=UTF-8
+encoding//src/main/resources/jdbc.properties=UTF-8
+encoding//src/main/resources/log4j.properties=UTF-8
+encoding//src/main/resources/spring-mvc.xml=UTF-8
+encoding//src/main/resources/spring-mybatis.xml=UTF-8
+encoding//src/main/resources/spring.xml=UTF-8
+encoding//src/main/test/com/ordersystem/test/TestMyBatis.java=UTF-8
+encoding//src/main/webapp/WEB-INF/web.xml=UTF-8
+encoding//src/main/webapp/css/common.css=UTF-8
+encoding//src/main/webapp/css/etw.css=UTF-8
+encoding//src/main/webapp/css/zui.css=UTF-8
+encoding//src/main/webapp/pages/views/common/com-page.html=UTF-8
+encoding//src/main/webapp/pages/views/index/index.html=UTF-8
+encoding//src/main/webapp/pages/views/left/com-left.html=UTF-8
+encoding//src/main/webapp/pages/views/top/com-top.html=UTF-8

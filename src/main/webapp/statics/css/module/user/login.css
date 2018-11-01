@@ -1,0 +1,149 @@
+body,html {
+	width: 100%;
+	height: 100%;
+	background: #f1f1e9;
+	overflow: hidden;
+	margin: 0px;
+	padding: 0px;
+	font-family: "Myriad Pro", Arial, "FZLanTingHei-R-GBK", 方正兰亭黑, "Microsoft YaHei", 微软雅黑, STHeiti, 华文黑体, SimSun, 宋体, sans-serif;
+}
+
+.br_d9d9c1 {border: 1px solid #d9d9c1;}
+
+#clockBtn {
+	width: 330px;
+	height: 45px;
+	border: 1px white solid;
+	color: white;
+	font-family: "Microsoft YaHei";
+	background-color: #c36b24;
+	font-size: 28px;
+	margin-left: 240px;
+	margin-top: 25px;
+}
+
+.clr_148ba7 {color: #418EDD;}
+
+.bkg_white {background: white;} .bkg_4a9f8d {background: #4a9f8d;} .bkg_ccc {background: #ccc;}
+
+.sxbs_udf_ipt_div input {
+	padding: 2px 0px 2px 1px;
+	height: 25px;
+	border: 0px none;
+	padding-left: 5px !important;
+	line-height: 25px;
+	font-family: "Myriad Pro", Arial, "FZLanTingHei-R-GBK", 方正兰亭黑, "Microsoft YaHei", 微软雅黑, STHeiti, 华文黑体, SimSun, 宋体, sans-serif;
+}
+
+.bdr_ipt {border: 1px solid #7C7C7C;}
+
+.workPuchCardTab tr td.left {
+	margin-left: 10px;
+}
+
+/*------ home-start ------*/
+.dido_manager_login {
+	width: 100%;
+	height: 100%;
+}
+
+.loginHeader {
+	height: 80px;
+}
+
+.headerOne {
+	width: 1000px;
+	margin: 0 auto;
+}
+
+.login_a {
+	color: #5c5c5c;
+	line-height: 80px;
+	text-decoration: none;
+	font-size: 16px;
+}
+
+.loginMain {
+	background: url('../../../images/frame/main/login_backg.png') 50% 50% no-repeat;
+    width: 100%;
+    height: 550px;
+}
+
+.mainHeader {
+    font-size: 16px;
+    line-height: 56px;
+    padding: 0 24px;
+    border-bottom: solid 1px #cacaca;
+    color: #242424;
+}
+
+.mainHeader .title {
+    font-size: 16px;
+    line-height: 56px;
+    color: #242424;
+}
+
+.mainBody {
+    padding: 0 51px;
+    font-size: 14px;
+    position: relative;
+}
+
+.mainBody .err_tips {
+    color: #ec2020;
+    margin-top: 15px;
+}
+
+.mainBody .item {
+    position: relative;
+}
+
+.mainBody .input_tips {
+    position: absolute;
+    top: 9px;
+    left: 9px;
+    color: #aaaaaa;
+    display: none;
+}
+
+.mainBody .item .input_item {
+    width: 298px;
+    padding: 8px 8px;
+    font-size: 14px;
+}
+
+.mainBody .hint {
+    margin-top: 7px;
+    color: #aaaaaa;
+    display: block;
+    line-height: 24px;
+}
+
+.green_btn {
+    background-color: #2cc64d;
+    border: 1px solid #2ab949;
+    line-height: 40px;
+    font-size: 16px;
+}
+
+.right_panel .title {
+    font-size: 16px;
+    color: #ffffff;
+}
+
+/* ------ footer ------*/
+.loginFooter {
+	width: 100%;
+	margin: 15px 0 0 0;
+}
+
+.footer_a a {
+    border-right: 1px solid #ccc;
+    padding: 0 8px 0 4px;
+    font-size: 16px;
+    color: #5c5c5c;
+    text-decoration: none;
+}
+
+
+

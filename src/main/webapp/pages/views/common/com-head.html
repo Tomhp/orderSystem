@@ -1,0 +1,35 @@
+<#macro zui_common_head>
+	<meta charset="utf-8">
+    <title>点餐系统</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<link rel="icon" href="statics/images/common/icon/didong_logo.ico" mce_href="statics/images/common/icon/didong_logo.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="statics/images/common/icon/didong_logo.ico" mce_href="statics/images/common/icon/didong_logo.ico" type="image/x-icon">
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+<!--     <link rel="stylesheet" type="text/css" href="${contentPath}/styles/common/common.css"> -->
+<!--       <link rel="stylesheet" type="text/css" href="http://statics.didong100.com/styles/common/common.css"> -->
+	<link rel="stylesheet" type="text/css" href="statics/css/module/user/login.css">
+	<link rel="stylesheet" type="text/css" href="css/chosetable.css">
+	
+	<!-- JS-File -->
+	<script type="text/javascript" src="scripts/common/jquery.min.js"></script>
+	<script type="text/javascript" src="scripts/common/reglogin.js"></script>
+<!-- 	<script type="text/javascript" src="scripts/plugin/jquery/1.11.3/jquery.min.js"></script> -->
+	<!-- etw -->
+    <link rel="stylesheet" type="text/css" href="css/etw.css" />
+    <script type="text/javascript" src="scripts/common/etw.js"></script>
+    <!-- ZUI -->
+    <link rel="stylesheet" type="text/css" href="css/zui.css" />
+    <script type="text/javascript" src="scripts/common/zui.js"></script>
+    <!-- common -->
+    <script type="text/javascript" src="scripts/common/common.js"></script>
+	<!-- JS-Code -->
+	<script type="text/javascript">
+		if(typeof zuiMain == 'undefined'){
+			zuiMain = {};
+		}
+		zuiMain.contentPath = '${contentPath}';
+		zuiMain.env = '${didongEnv}';
+		zuiMain.deviceType = '${isPcBrower}';
+	</script>
+</#macro>

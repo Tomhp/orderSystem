@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ordersystem.dao.GoodsMapper">
+	<resultMap type="com.ordersystem.po.Goods" id="BaseResultMap">
+		<result column="goodsCode" property="goodsCode" jdbcType="INTEGER" />
+		<result column="goodsName" property="goodsName" jdbcType="VARCHAR" />
+		<result column="goodsType" property="goodsType" jdbcType="VARCHAR" />
+		<result column="goodsPrice" property="goodsPrice" jdbcType="VARCHAR" />
+		<result column="goodsDescribe" property="goodsDescribe"
+			jdbcType="VARCHAR" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		GoodsCode,goodsName,goodsType,goodsPrice,goodsDescribe
+	</sql>
+
+	<!-- 新增 -->
+	<insert id="addGoods" parameterType="com.ordersystem.po.Goods">
+		insert into goods_table
+		(goodsCode,goodsName,goodsType,goodsPrice,goodsDescribe)
+		values
+		(#{goodsCode,jdbcType=INTEGER},
+		#{goodsName,jdbcType=VARCHAR},
+		#{goodsType,jdbcType=VARCHAR},
+		#{goodsPrice,jdbcType=VARCHAR},
+		#{goodsDescribe,jdbcType=VARCHAR}
+		)
+	</insert>
+
+	<sql id="queryWhere">
+		<where>
+			<if test="goodsName != null and goodsName != ''"> AND g.goodsName = #{goodsName}</if>
+			<if test="goodsType != null and goodsType !=''"> AND g.goodsType = #{goodsType}</if>
+		</where>
+	</sql>
+	<!-- 查询或是商品列表展示 -->
+	<select id="getGoods" resultMap="BaseResultMap" parameterType="com.ordersystem.po.Goods">
+		select goodsCode,goodsName,goodsType,goodsPrice,goodsDescribe from
+		goods_table g
+		<include refid="queryWhere"></include>
+		order by goodsType desc
+	</select>
+
+	<!-- 通过Code查询 -->
+	<select id="queryGoodsByCode" parameterType="java.lang.Integer"
+		resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from goods_table
+		where goodsCode=#{goodsCode,jdbcType=INTEGER}
+	</select>
+
+	<!-- 删除 -->
+	<select id="delByCode" parameterType="java.lang.Integer">
+		delete from goods_table
+		where goodsCode=#{goodsCode,jdbcType=INTEGER}
+	</select>
+	<!-- 更新 -->
+	<update id="updateByCode" parameterType="com.ordersystem.po.Goods">
+		update goods_table set
+		goodsName = #{goodsName,jdbcType=VARCHAR},
+		goodsType = #{goodsType,jdbcType=VARCHAR},
+		goodsPrice = #{goodsPrice,jdbcType=VARCHAR},
+		goodsDescribe = #{goodsDescribe,jdbcType=VARCHAR}
+		where goodsCode =#{goodsCode,jdbcType=INTEGER}
+	</update>
+
+</mapper>

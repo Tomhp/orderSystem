@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>选择餐桌</title>
+<link rel="stylesheet" type="text/css" href="css/chosetable.css">
+<script type="text/javascript" src="scripts/common/jquery.min.js"></script>
+</head>
+<body>
+<div class='deskrow'>
+	<div class='desk' deskno=1>1</div>
+	<div class='desk' deskno=2>2</div>
+	<div class='desk full' deskno=3>3</div>
+	<div class='desk' deskno=4>4</div>
+	<div class='desk' deskno=5>5</div>
+</div>
+<div id="poporder" style='display:none;'>
+    <div id='pop_deskno'></div>
+    <input type='hidden' id='pop_h_deskno'>
+    <div>
+    <div><input type='button' class='seeo' value='查看订单'</div>
+        <table style='margin-top:50px;margin-left:50px;'>
+            <tbody id='pop_tbody'>
+                <tr>
+	                <th>菜名</th>
+	                <th>类型</th>
+	                <th>描述</th>
+	                <th>价格</th>
+	                <th>功能</th>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+</div>
+<script type="text/javascript"> 
+    var poporder=$('#poporder');
+    $('.desk').click(function(){
+    	var t=$(this);
+    	var deskno=t.attr('deskno');
+    	$('#pop_deskno').html('桌号：'+deskno);
+    	$('#pop_h_deskno').val(deskno);
+    	//alert($('#pop_h_deskno').val());
+    	loadfood();
+    	poporder.css('display','block');    	
+    });
+    
+    function loadfood(){
+    	$.ajax({
+			type: 'POST',
+			url: 'goods/goodsList',
+			processData: true,
+			data: '',
+			success: function(callData) {
+// 				alert(callData);
+				var json = eval('(' + callData + ')');
+				if(json && json.responseEntity) {
+					addfood(json.responseEntity);
+                   
+				}
+			},
+			error: function() {
+				showTipWin(false, 'URL请求失败！'+reqUrl);
+			}
+		});
+    }
+    function addfood(data){
+//     	data=[{goodsCode:'1',goodsName:'鱼',goodsType:'热菜',goodsDescribe:'哈哈',goodsPrice:58},
+//     	      {goodsCode:'2',goodsName:'小鱼',goodsType:'热菜',goodsDescribe:'热',goodsPrice:45}];
+    	var tbody=$('#pop_tbody');
+    	for(var i=0;i<data.length;i++){
+    		var o=data[i];
+    	    var ths="<th>"+o.goodsName+"</th>"
+    	           +"<th>"+o.goodsType+"</th>"
+    	           +"<th>"+o.goodsDescribe+"</th>"
+    	           +"<th>"+o.goodsPrice+"</th>"
+    	           +"<th><input type='button' class='addorder' value='添加' goodsCode="+o.goodsCode+"></th>";
+    	    tbody.append("<tr>"+ths+"</tr>");
+    	}
+    	$('.addorder').click(function(){
+        	var t=$(this);
+        	var deskno=$('#pop_h_deskno').val();
+        	var goodsCode=t.attr('goodsCode');
+        	//alert(goodsCode);
+        	var params = '';
+        	params += 'deskno='+deskno;
+        	params += '&goodsCode='+goodsCode;
+        	$.ajax({
+    			type: 'POST',
+    			url: 'goods/addOrder',
+    			processData: true,
+    			data: params,
+    			success: function(callData) {
+//     				alert(callData);
+					alert('操作成功');
+    				var json = eval('(' + callData + ')');
+    				if(json && json.responseEntity) {
+    					alert('操作成功');
+    				}
+    			},
+    			error: function() {
+    				showTipWin(false, 'URL请求失败！'+reqUrl);
+    			}
+    		});
+        });
+    }
+</script>
+</body>
+</html>

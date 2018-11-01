@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ordersystem.dao.OrderMapper">
+	<resultMap type="com.ordersystem.po.Order" id="BaseResultMap">
+		<result column="id" property="id" />
+		<result column="tableCode" property="tableCode" jdbcType="INTEGER" />
+		<result column="orderNum" property="orderNum" jdbcType="VARCHAR" />
+		<result column="goodsCode" property="goodsCode" jdbcType="VARCHAR" />
+		<result column="goodsPrice" property="goodsPrice" jdbcType="VARCHAR" />
+		<result column="tableStatus" property="tableStatus" jdbcType="VARCHAR" />
+		<result column="createTime" property="createTime" jdbcType="VARCHAR" />
+		<result column="sumGoodsNum" property="sumGoodsNum" jdbcType="INTEGER" />
+	</resultMap>
+
+	<sql id="Base_Column_List">
+		id,tableCode,orderNum,goodsCode,goodsPrice,tableStatus,createTime
+	</sql>
+
+	<!-- 顾客点菜，新增订单 -->
+	<insert id="addOrder" parameterType="com.ordersystem.po.Order">
+		insert into order_table
+		(id,tableCode,orderNum,goodsCode,goodsPrice,tableStatus,createTime)
+		values
+		(#{id,jdbcType=INTEGER},
+		#{tableCode,jdbcType=VARCHAR},
+		#{orderNum,jdbcType=VARCHAR},
+		#{goodsCode,jdbcType=VARCHAR},
+		#{goodsPrice,jdbcType=VARCHAR},
+		#{tableStatus,jdbcType=VARCHAR},
+		#{createTime,jdbcType=VARCHAR}
+		)
+	</insert>
+	<select id="getMaxOrderNum" resultType="String">
+		select max(orderNum) from
+		order_table
+	</select>
+	<select id="getOrderNum" resultType="String">
+		select max(orderNum) from (select orderNum from order_table where
+		tableStatus='0' and tableCode=#{tableCode,jdbcType=VARCHAR}) a
+	</select>
+	<select id="getOrderQuery" resultMap="BaseResultMap"
+		parameterType="String">
+		select tableCode,orderNum,tableStatus,goodsCode,count(1)
+		as sumGoodsNum from
+		order_table
+		where tableCode =#{tableCode,jdbcType=VARCHAR}
+		and tableStatus='0'
+		group by
+		tableCode,orderNum,goodsCode,tableStatus
+	</select>
+	<!-- 顾客减菜操作 -->
+	<select id="deleteOrderGoods" parameterType="map">
+		delete from order_table where id in (
+		select min(id) from (select * from order_table where tableCode =#{tableCode,jdbcType=VARCHAR} 
+		and goodsCode = #{goodsCode,jdbcType=INTEGER} and
+		tableStatus='0' ) a
+		)
+
+	</select>
+</mapper>

@@ -1,0 +1,32 @@
+<#macro zui_common_page>
+	<div class="ft_rg vt_md text_size_12 mg_rg_10 pageBarPanel">
+		<div class="ft_lt clr_888888 pagecnt">
+			共有<span class="totalCount">0</span>条， 每页显示：<span class="limitCount">0</span>条
+		</div>
+		<ul class="ft_lt dyst_ul_imblk vt_md pageul">
+			<li class="enablePage br_rdu_3 startcls" title="第一页">
+				<a class="frame_icon_all startpg mg_tp_8"></a>
+			</li>
+			<li class="enablePage br_rdu_3 firstcls" title="上一页">
+				<a class="frame_icon_all firstpg mg_tp_8"></a>
+			</li>
+			<li class="enablePage br_rdu_3 nextcls" title="下一页">
+				<a class="frame_icon_all nextpg mg_tp_8"></a>
+			</li>
+			<li class="enablePage br_rdu_3 endcls" title="最后一页">
+				<a class="frame_icon_all endpg mg_tp_8"></a>
+			</li>
+			<li>
+				<div class="ft_lt pageone">第</div>
+				<div class="ipt_div_cls ft_lt">
+					<input type="text" class="iptNumber startCount" readonly="readonly" style="width: 30px;"  />
+				</div>
+				<div class="ft_lt pageone">页,共<span class="totalPage">0</span>页</div>
+			</li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+		// 设置控件只能输入数字
+		canNumberIpt('iptNumber');
+	</script>
+</#macro>

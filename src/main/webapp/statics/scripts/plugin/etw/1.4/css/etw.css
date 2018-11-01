@@ -1,0 +1,448 @@
+﻿@CHARSET "UTF-8";
+/*---------------------------------------
+ * 浮动窗口CSS样式-start-皮肤（blue）
+ ---------------------------------------*/
+
+.t_l,.t_c,.t_r,.m_l,.m_r,.b_l,.b_c,.b_r {
+	overflow:hidden;
+	background:#000;
+	opacity:.2;
+	filter:alpha(opacity=20);
+}
+
+.t_l,.t_r,.b_l,.b_r {
+	width:4px;height:4px;
+}
+
+.t_c,.b_c {
+	height:4px;
+}
+
+.t_l {
+	-moz-border-radius:4px 0 0 0;
+	-webkit-border-radius:4px 0 0 0;
+	border-radius:4px 0 0 0;
+}
+
+.t_r {
+	-moz-border-radius:0 4px 0 0;
+	-webkit-border-radius:0 4px 0 0;
+	border-radius:0 4px 0 0;
+}
+
+.b_r {
+	-moz-border-radius:0 0 4px 0;
+	-webkit-border-radius:0 0 4px 0;
+	border-radius:0 0 4px 0;
+}
+
+.b_l {
+	-moz-border-radius:0 0 0 4px;
+	-webkit-border-radius:0 0 0 4px;
+	border-radius:0 0 0 4px;
+}
+
+.p_pop .flbc,.p_pof .flbc {
+	margin-right:8px;margin-top:4px;
+}
+
+.flb {
+	padding: 5px 10px 8px 10px;height:20px;
+	line-height:20px;cursor: move;
+}
+
+.flb .flb_text {
+	float:left;font-size:14px;font-weight:700;color:#369;
+}
+
+.flbc {
+	float: right;
+	width: 20px;height: 20px;
+	overflow: hidden;
+	text-indent: -9999px; 
+	background: url("../image/common.png") no-repeat -180px 0px;
+	cursor:pointer;
+}
+
+.flbc:hover {
+	background-position: -180px -20px;
+}
+
+.flb_content {
+	min-height: 45px;
+	height: expression(this.height < 45 ? '45px': true);
+	line-height: 25px;
+	padding: 8px 10px 10px 10px !important;
+	color: black;
+	font-size: 16px;
+}
+
+.flb_window {
+	min-height: 60px;
+	min-width: 300px;
+	width: expression(this.width < 300 ? '300px': true);
+	height: expression(this.height < 60 ? '60px': true);
+	-webkit-box-shadow: #000 0px 0px 10px;
+	-moz-box-shadow: #000 0px 0px 10px;
+	box-shadow: #000 0px 0px 10px;
+}
+
+.etwAllSameCls {
+	font: 12px/1.5 "Microsoft Yahei",Tahoma,Arial,"Helvetica Neue","Hiragino Sans GB","Segoe UI",STHeiti,sans-serif;
+}
+
+.flb_div_INFO {
+	width: 36px;
+	height: 36px;
+	background: url("../image/common.png") no-repeat -131px 0px;
+	margin: 5px 0 0 12px !important;
+}
+
+.sxbbs_udf_zhezhao {
+	display: none;
+	position: absolute;
+	left:0px;
+	top:0px;
+	opacity:0.4;
+	filter:alpha(opacity=40);
+	width: 100%;
+	/* background-color:#333; */
+	background-color: #fff;
+}
+
+.m_c .o {
+	height: 40px;
+	text-align: right;
+	border-top: 1px solid #CCC;
+	background: #F2F2F2;
+	width: 100%;
+	float: left;
+}
+
+.pn {
+	vertical-align: middle;
+	overflow: hidden;
+	margin: 10px 10px 0 0 !important;
+	padding: 0;
+	height: 23px;
+	border: 1px solid #999;
+	cursor: pointer;
+	-moz-box-shadow: 0 1px 0 #E5E5E5;
+	-webkit-box-shadow: 0 1px 0 #E5E5E5;
+	box-shadow: 0 1px 0 #E5E5E5;
+	border-color: #56A812;
+	background-color: #73C803;
+	color: white !important;
+	background: url("../image/common.png") no-repeat;
+}
+
+.pn_ok {
+	background-position:  0px -48px;
+}
+
+.pn_canel {
+	background-position:  -100px -48px;
+}
+
+.pn strong {
+	font-weight: 700;
+	padding: 10px;
+	line-height: 21px;
+    font-family: 'Microsoft Yahei',verdana;
+    color: white;
+}
+
+.sxbs_udf_tip_success {
+	margin: 10px 0 20px 10px;
+	font-size: 14px;
+}
+
+/*--- 遮罩层CSS ---*/
+.etw_zezao_main {
+	height: 60px;
+	width: 300px;
+	padding: 10px !important;
+}
+
+.zezao_main_Progress {
+	width: 100%;
+	height: 30px;
+	margin: 15px 0 0 0 !important;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	background: #F3F3F3;
+	line-height: 30px;
+	position: relative;
+}
+
+.zezao_main_ProgressBar {
+	width: 100%;
+	height: 30px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	background: #98d97b;
+	width: 0px;
+}
+
+.zezao_main_message {
+	text-align: center;
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	position: absolute;
+	font-size: 12px;
+	color: #666;
+}
+
+/*---------------------------------------
+ * 浮动窗口CSS样式-end-皮肤（blue）
+ ---------------------------------------*/
+
+/*---------------------------------------
+ * 新版-浮动窗口CSS样式-start-皮肤（gray）
+ ---------------------------------------*/
+
+*,*:before,*:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.btn {
+	display: inline-block;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 1.428571429;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+
+.btn:focus {
+	outline: thin dotted;
+	outline: 5px auto -webkit-focus-ring-color;
+	outline-offset: -2px;
+}
+
+.btn:hover,.btn:focus {
+	color: #333333;
+	text-decoration: none;
+}
+
+.btn:active,.btn.active {
+	background-image: none;
+	outline: 0;
+	-webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+	box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+
+.btn.disabled,.btn[disabled],fieldset[disabled] .btn {
+	pointer-events: none;
+	cursor: not-allowed;
+	opacity: 0.65;
+	filter: alpha(opacity = 65);
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+.btn-default {
+	color: #333333;
+	background-color: #ffffff;
+	border-color: #cccccc;
+}
+
+.btn-default:hover,.btn-default:focus,.btn-default:active,
+.btn-default.active,.open .dropdown-toggle.btn-default {
+	color: #333333;
+	background-color: #ebebeb;
+	border-color: #adadad;
+}
+
+.modal-header .close {
+	font-size: 28px;
+	margin-top: -6px;
+	font-weight: normal;
+	padding: 0;
+	cursor: pointer;
+	background: transparent;
+	border: 0;
+	-webkit-appearance: none;
+	float: right;
+	font-weight: bold;
+	line-height: 1;
+	color: #000000;
+	text-shadow: 0 1px 0 #ffffff;
+	opacity: 0.2;
+	filter: alpha(opacity = 20);
+}
+
+.close:hover,.close:focus {
+	color: #000000;
+	text-decoration: none;
+	cursor: pointer;
+	opacity: 0.5;
+	filter: alpha(opacity = 50);
+	font-size: 28px;
+}
+
+.modal-dialog {
+	background: white;
+}
+
+.modal-content {
+	border-radius: 0px;
+	border: 1px solid #999;
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+	box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5)
+}
+
+.modal-header {
+	min-height: 16.428571429px;
+	padding: 15px;
+	border-bottom: 1px solid #e5e5e5;
+	cursor: move;
+}
+
+.modal-title {
+	margin: 0;
+	line-height: 1.428571429;
+}
+
+.modal-title {
+	font-size: 14px
+}
+
+.modal-dialog .modal-title {
+	user-select: none;
+	-webkit-user-select: none
+}
+
+.modal-body {
+	padding: 10px 0;
+	min-height: 80px;
+	height: expression(this.height < 80 ? '80px': true);
+}
+
+.modal-body-apptip {
+	padding: 10px;
+	text-align: center;
+}
+
+.modal-footer {
+	padding: 19px 20px 20px;
+	margin-top: 15px;
+	text-align: right;
+	border-top: 1px solid #e5e5e5;
+}
+
+.modal-footer:before,.modal-footer:after {
+	display: table;
+	content: " ";
+}
+
+.modal-footer:after {
+	clear: both;
+}
+
+.modal-footer:before,.modal-footer:after {
+	display: table;
+	content: " ";
+}
+
+.modal-footer:after {
+	clear: both;
+}
+
+.modal-footer .btn+.btn {
+	margin-bottom: 0;
+	margin-left: 5px;
+}
+
+.modal-footer .btn-group .btn+.btn {
+	margin-left: -1px;
+}
+
+.modal-footer .btn-block+.btn-block {
+	margin-left: 0;
+}
+
+.modal-footer {
+	margin-top: 0px
+}
+
+.btn {
+	font-size: 12px;
+	border-radius: 0px;
+	padding: 8px 16px;
+	height: 32px;
+	line-height: 14px
+}
+
+.btn-default {
+	color: #333;
+	border: 1px solid #ddd;
+	background-color: #f7f7f7
+}
+
+.btn-default:active {
+	-webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.125);
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.125)
+}
+
+.btn-default:focus {
+	color: #333;
+	border: 1px solid #ddd;
+	background-color: #f7f7f7;
+	outline: none
+}
+
+.btn-default:hover {
+	color: #333;
+	border: 1px solid #ddd;
+	background-color: #fff
+}
+
+.btn-primary {
+	color: #ffffff;
+	background-color: #428bca;
+	border-color: #357ebd;
+	border: 1px solid #09c;
+}
+
+.btn-primary:active {
+	-webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.125);
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.125)
+}
+
+.btn-primary:focus {
+	color: #fff;
+	border: 1px solid #09c;
+	background-color: #09c;
+	outline: none
+}
+
+.btn-primary:hover {
+	color: #fff;
+	border: 1px solid #28b5d6;
+	background-color: #28b5d6
+}
+
+/*---------------------------------------
+ * 新版-浮动窗口CSS样式-end-皮肤（gray）
+ ---------------------------------------*/ 
+

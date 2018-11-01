@@ -1,0 +1,46 @@
+一、框架说明：
+	ZUI-框架是构建简单灵活的PC后台系统架构，轻量级
+	
+二、框架使用
+
+	1、框架布局
+		
+三、Table使用
+
+	1、table节点中属性
+		
+		over-x：是否支持横向滚动条，默认为false
+	
+	2、table tr th节点中属性
+		
+		name：对应Javaben中的属性，区分大小写
+		hidden：是否要隐藏该列，该属性只要有值就表示要隐藏，没有true和false之分
+		functName：该列单元格显示内容要执行的函数名称，函数有两个参数（1-当前单元格的值、2-当前一行数据对象，取值：obj.id或obj.account）
+		prompt：该列是否支持鼠标放上去有提示框，如果值为this，则显示当前值；如果为其他值，则表示要执行该函数返回的数据
+		align：居中-center、居左-left、居右-right，默认为left
+		single：选择框，true-多选、false-单选，默认是多选
+	
+	3、特殊name属性使用
+	
+		checkbox：单选或多选框
+		zuiOper：
+			a、操作栏，目前几种样式（修改-write、删除-remove、撤销-backup）
+			b、operarry，支持多个按钮
+					格式如下：write[funtion, title, isShow, isClick]||remove[funtion, title, isShow, isClick]；支持write按钮、remove按钮
+					funtion：回调函数名称，会自动补上参数（record-行数据对象，该对象必须调用eval方法转换成相应的对象）
+					title：    是按钮的提示信息
+					isShow：  是否要显示，可为空，支持true和false，如果不是boolean类型，则请求自定义函数
+					isClik：  是否能点击，可为空，支持true和false，如果不是boolean类型，则请求自定义函数
+		
+
+
+
+
+
+
+
+
+
+
+
+
